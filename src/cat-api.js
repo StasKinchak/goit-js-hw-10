@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-axios.defaults.headers.common['x-api-key'] = 'llive_FFvfduuK7VX8L0fcMGeXqcOTqqUfq741DmMNvhDWFUEryQpwxGicHwgLBJ6D6J8C';
+axios.defaults.headers.common['x-api-key'] = 'live_FFvfduuK7VX8L0fcMGeXqcOTqqUfq741DmMNvhDWFUEryQpwxGicHwgLBJ6D6J8C';
 
 
 export async function fetchBreeds() {
@@ -13,7 +13,7 @@ export async function fetchBreeds() {
 }
 
 
-export async function fetchCatByBreed(breedId) {
+export async function fetchCatBreed(breedId) {
   try {
     const response = await axios.get(
       `https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}`

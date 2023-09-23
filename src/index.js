@@ -1,4 +1,4 @@
-import { fetchBreeds, fetchCatByBreed } from './cat-api.js';
+import { fetchBreeds, fetchCatBreed } from './cat-api.js';
 
 const breedSelect = document.querySelector('.breed-select');
 const loader = document.querySelector('.loader');
@@ -9,7 +9,6 @@ const catName = document.querySelector('.cat-name');
 const catDescription = document.querySelector('.cat-description');
 const catTemperament = document.querySelector('.cat-temperament');
 
-// Function to populate breed options in the select element
 async function populateBreeds() {
   try {
     const breeds = await fetchBreeds();
@@ -25,10 +24,9 @@ async function populateBreeds() {
   }
 }
 
-
 async function displayCatInfo(breedId) {
   try {
-    const catData = await fetchCatByBreed(breedId);
+    const catData = await fetchCatBreed(breedId);
     const cat = catData[0];
     catImage.src = cat.url;
     catName.textContent = cat.breeds[0].name;
