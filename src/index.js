@@ -10,6 +10,7 @@ const catDescription = document.querySelector('.cat-description');
 const catTemperament = document.querySelector('.cat-temperament');
 
 breedSelect.hidden = true;
+loader.style.display = 'block';
 
 async function populateBreeds() {
   try {
@@ -21,6 +22,7 @@ async function populateBreeds() {
       breedSelect.appendChild(option);
       breedSelect.hidden = false;
       loader.style.display = 'block';
+      hideLoader();
     });
   } catch (err) {
     console.error('Error fetching breeds:', err);
