@@ -9,6 +9,8 @@ const catName = document.querySelector('.cat-name');
 const catDescription = document.querySelector('.cat-description');
 const catTemperament = document.querySelector('.cat-temperament');
 
+breedSelect.hidden = true;
+
 async function populateBreeds() {
   try {
     const breeds = await fetchBreeds();
@@ -17,6 +19,8 @@ async function populateBreeds() {
       option.value = breed.id;
       option.textContent = breed.name;
       breedSelect.appendChild(option);
+      breedSelect.hidden = false;
+      loader.style.display = 'block';
     });
   } catch (err) {
     console.error('Error fetching breeds:', err);

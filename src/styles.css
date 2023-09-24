@@ -15,6 +15,15 @@
   display: none;
 }
 
+.loader:after {
+  content: '';
+  height: 4px;
+  width: 0%;
+  display: block;
+  background: #ff3d00;
+  animation: 5s lineGrow linear infinite;
+}
+
 .error {
   display: none;
   color: red;
@@ -43,4 +52,8 @@
 
 .cat-temperament {
   font-style: italic;
+}
+
+.utilit-js {
+  display: none;
 }
